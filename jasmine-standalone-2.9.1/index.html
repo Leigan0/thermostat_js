@@ -1,12 +1,22 @@
 <!doctype html>
 <html>
   <head>
-    <script src="/src/Thermostat.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="src/Thermostat.js"></script>
+    <script src="src/ThermostatJQuery.js"> </script>
   </head>
   <body>
-    <button type="button">Turn Power Saving on</button>
-    <button type="button">Turn Power savings off</button>
-    <button type="button">Increase Temperature</button>
-    <button type="button">Decrease Temperature</button>
+    <section>
+      <h1> Current Temperature: </h1>
+      <h1 id="currentTemp"></h1>
+        <p>
+        <button class= "button" id="turnPowerSaveOn">Turn Power Saving on</button>
+        <button class= "button" button id="turnPowerSaveOff">Turn Power Saving off</button>
+        <button class= "button" button id="increaseTemp">Increase Temperature</button>
+        <button class= "button" button id="decreaseTemp">Decrease Temperature</button>
+        <button class= "button" button id="resetTemp">Reset Temperature</button>
+      </p>
+    </section>
   </body>
 </html>
