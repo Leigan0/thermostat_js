@@ -1,11 +1,15 @@
 $(document).ready(function(){
   var thermostat = new Thermostat;
   updateTemperature();
+  hidePowerSaveButton();
 
   function updateTemperature(){
     $('#currentTemp').text(thermostat.temperature)
     $('#currentTemp').attr('class', thermostat.currentUsage())
   }
+    function hidePowerSaveButton(){
+      if (thermostat.powerSaving) $("#turnPowerSaveOn").hide();
+    }
 
   $("#turnPowerSaveOn").click(function(event){
     thermostat.powerSavingOn();

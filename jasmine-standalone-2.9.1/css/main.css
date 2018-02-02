@@ -12,6 +12,13 @@ h1 {
 .button {
   font-size: 50px;
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  border-radius: 50%;
+  color: black;
+  border: 2px solid;
+  padding:100px;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
 
 }
 
@@ -37,8 +44,20 @@ h1 {
 
 #increaseTemp{
   background-color: orange;
+  padding:130px;
+  font-size: 100px;
+  font-weight: 700;
+  border-radius: 45%;
 }
 
 #decreaseTemp{
   background-color: aquamarine;
+  padding:130px;
+  font-size: 100px;
+  font-weight: 900;
+  border-radius: 45%;
+}
+
+#resetTemp{
+  background-color: yellow;
 }
