@@ -7,6 +7,7 @@ $(document).ready(function(){
   var thermostat = new Thermostat;
   updateTemperature();
   hidePowerSaveButton();
+  displayWeather('Wakefield')
 
   function updateTemperature(){
     $('#currentTemp').text(thermostat.temperature)
@@ -16,10 +17,22 @@ $(document).ready(function(){
       if (thermostat.powerSaving) $("#turnPowerSaveOn").hide();
     }
 
-    $.get( `http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=dfab0b20270092f2eb7795e16c8d3077&units=metric`, function( response ) {
-        $("#temp").html( response.main.temp );
-        $("#weather").html( response.weather[0].description );
-    });
+    function displayWeather(city){
+      var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+      var token = '&appid=dfab0b20270092f2eb7795e16c8d3077'
+      var units = '&units=metric'
+      $.get(url + token + units, function(response) {
+      $("#temp").html( response.main.temp );
+      $("#weather").html( response.weather[0].description );
+      $("#current-location").text(city)
+    })
+  }
+
+    $('#select-city').submit(function(event) {
+      event.preventDefault();
+      var city = $('#current-city').val();
+      displayWeather(city)
+  })
 
   $("#turnPowerSaveOn").click(function(event){
     thermostat.powerSavingOn();
